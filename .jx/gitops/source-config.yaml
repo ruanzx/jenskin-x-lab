@@ -1,0 +1,20 @@
+apiVersion: gitops.jenkins-x.io/v1alpha1
+kind: SourceConfig
+metadata:
+  creationTimestamp: null
+spec:
+  groups:
+  - owner: ruanzx
+    provider: https://github.com
+    providerKind: github
+    repositories:
+    - name: jenskin-x-lab
+    scheduler: in-repo
+  jenkinsServers:
+  - groups:
+    - owner: rawlingsj
+      provider: https://github.com
+      providerKind: github
+      repositories:
+      - name: jenkins
+    server: myjenkins
